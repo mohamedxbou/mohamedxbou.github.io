@@ -6,274 +6,284 @@
     <title>OmniNova Solutions - Connecting Ideas to Innovation</title>
     <style>
         :root {
-            --primary: #4A90E2;
-            --secondary: #F8F9FA;
-            --dark: #2C3E50;
-            --light: #FFFFFF;
-        }
+    --primary: #5D8F8E; /* Calming teal for accents */
+    --secondary: #F4F4F9; /* Soft off-white */
+    --dark: #242831; /* Dark color for the navbar and text */
+    --light: #F0F5F7; /* Light grayish-blue for backgrounds */
+    --accent: #FF8C42; /* Warm orange for highlights */
+}
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', sans-serif;
-        }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
 
-        html {
-            scroll-behavior: smooth;
-        }
+html {
+    scroll-behavior: smooth;
+}
 
-        body {
-            line-height: 1.6;
-            color: var(--dark);
-        }
+body {
+    line-height: 1.6;
+    color: var(--dark);
+    background-color: var(--secondary);
+}
 
-        .header {
-            background: var(--light);
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-        }
+.header {
+    background: var(--dark);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
 
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 1rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
-        .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: var(--primary);
-        }
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary);
+}
 
-        .nav-toggle {
-            display: none;
-        }
+.logo img {
+    height: 60px;
+    width: 200px;
+}
 
-        .nav-menu {
-            display: flex;
-            gap: 2rem;
-            list-style: none;
-        }
+.nav-toggle {
+    display: none;
+}
 
-        .nav-menu a {
-            color: var(--dark);
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
+.nav-menu {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+}
 
-        .nav-menu a:hover {
-            color: var(--primary);
-        }
+.nav-menu a {
+    color: var(--secondary);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
 
-        .hero {
-            background: linear-gradient(135deg, var(--primary) 0%, #2C5282 100%);
-            color: var(--light);
-            padding: 8rem 1rem 4rem;
-            text-align: center;
-        }
+.nav-menu a:hover {
+    color: var(--accent);
+}
 
-        .hero h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
+.hero {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+    color: var(--light);
+    padding: 8rem 1rem 4rem;
+    text-align: center;
+}
 
-        .section {
-            padding: 4rem 1rem;
-        }
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
 
-        .section-title {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
+.section {
+    padding: 4rem 1rem;
+}
 
-        .services {
-            background: var(--secondary);
-        }
+.section-title {
+    text-align: center;
+    margin-bottom: 3rem;
+    color: var(--dark);
+}
 
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
+.services {
+    background: var(--secondary);
+}
 
-        .service-card {
-            background: var(--light);
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
-        }
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
 
-        .service-card:hover {
-            transform: translateY(-5px);
-        }
+.service-card {
+    background: var(--light);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
 
-        .service-icon {
-            width: 60px;
-            height: 60px;
-            background: var(--primary);
-            border-radius: 50%;
-            margin: 0 auto 1rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--light);
-            font-size: 1.5rem;
-        }
+.service-card:hover {
+    transform: translateY(-5px);
+}
 
-        .service-card h3 {
-            margin: 1rem 0;
-            color: var(--primary);
-        }
+.service-icon {
+    width: 60px;
+    height: 60px;
+    background: var(--primary);
+    border-radius: 50%;
+    margin: 0 auto 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--light);
+    font-size: 1.5rem;
+}
 
-        .service-card ul {
-            list-style: none;
-            margin: 1rem 0;
-        }
+.service-card h3 {
+    margin: 1rem 0;
+    color: var(--primary);
+}
 
-        .service-card li {
-            margin: 0.5rem 0;
-            padding-left: 1.5rem;
-            position: relative;
-        }
+.service-card ul {
+    list-style: none;
+    margin: 1rem 0;
+}
 
-        .service-card li::before {
-            content: "→";
-            position: absolute;
-            left: 0;
-            color: var(--primary);
-        }
+.service-card li {
+    margin: 0.5rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+}
 
-        .about {
-            background: var(--light);
-        }
+.service-card li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: var(--primary);
+}
 
-        .about-content {
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
-        }
+.about {
+    background: var(--light);
+}
 
-        .team-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
+.about-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
 
-        .team-member {
-            text-align: center;
-        }
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
 
-        .team-photo {
-            width: 150px;
-            height: 150px;
-            background: #DDD;
-            border-radius: 50%;
-            margin: 0 auto 1rem;
-        }
+.team-member {
+    text-align: center;
+}
 
-        .contact {
-            background: var(--secondary);
-        }
+.team-photo {
+    width: 150px;
+    height: 150px;
+    background: #DDD;
+    border-radius: 50%;
+    margin: 0 auto 1rem;
+}
 
-        .contact-container {
-            max-width: 600px;
-            margin: 0 auto;
-        }
+.contact {
+    background: var(--secondary);
+}
 
-        .contact-form {
-            background: var(--light);
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
+.contact-container {
+    max-width: 600px;
+    margin: 0 auto;
+}
 
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
+.contact-form {
+    background: var(--light);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
 
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-        }
+.form-group {
+    margin-bottom: 1.5rem;
+}
 
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 0.8rem;
-            border: 1px solid #DDD;
-            border-radius: 5px;
-        }
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+}
 
-        .footer {
-            background: var(--dark);
-            color: var(--light);
-            padding: 3rem 1rem;
-            text-align: center;
-        }
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #DDD;
+    border-radius: 5px;
+}
 
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-        }
+.footer {
+    background: var(--dark);
+    color: var(--light);
+    padding: 3rem 1rem;
+    text-align: center;
+}
 
-        .cta-button {
-            display: inline-block;
-            padding: 1rem 2rem;
-            background: var(--primary);
-            color: var(--light);
-            text-decoration: none;
-            border-radius: 5px;
-            border: none;
-            cursor: pointer;
-            margin-top: 2rem;
-            transition: background 0.3s ease;
-        }
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
 
-        .cta-button:hover {
-            background: #357ABD;
-        }
+.cta-button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background: var(--primary);
+    color: var(--light);
+    text-decoration: none;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    margin-top: 2rem;
+    transition: background 0.3s ease;
+}
 
-        @media (max-width: 768px) {
-            .nav-toggle {
-                display: block;
-            }
+.cta-button:hover {
+    background: var(--accent);
+}
 
-            .nav-menu {
-                display: none;
-                width: 100%;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                background: var(--light);
-                padding: 1rem;
-                flex-direction: column;
-                text-align: center;
-            }
+@media (max-width: 768px) {
+    .nav-toggle {
+        display: block;
+    }
 
-            .nav-menu.active {
-                display: flex;
-            }
-        }
+    .nav-menu {
+        display: none;
+        width: 100%;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background: var(--dark);
+        padding: 1rem;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .nav-menu.active {
+        display: flex;
+    }
+}
+
     </style>
 </head>
 <body>
     <header class="header">
         <nav class="nav-container">
-            <div class="logo">OmniNova</div>
+
+            <div class="logo"><img src="omninova-logo.jpg" alt="OmniNova Solutions Logo"></div>
             <button class="nav-toggle">Menu</button>
             <ul class="nav-menu">
                 <li><a href="#services">Services</a></li>
@@ -342,24 +352,8 @@
     <section class="section about" id="about">
         <h2 class="section-title">À Propos de Nous</h2>
         <div class="about-content">
-            <p>OmniNova Solutions est leader dans la transformation digitale des entreprises. Depuis notre création en 2020, nous accompagnons nos clients dans leur évolution technologique avec expertise et innovation.</p>
-            <div class="team-grid">
-                <div class="team-member">
-                    <div class="team-photo"></div>
-                    <h3>Jean Dupont</h3>
-                    <p>CEO & Fondateur</p>
-                </div>
-                <div class="team-member">
-                    <div class="team-photo"></div>
-                    <h3>Marie Martin</h3>
-                    <p>CTO</p>
-                </div>
-                <div class="team-member">
-                    <div class="team-photo"></div>
-                    <h3>Pierre Laurent</h3>
-                    <p>Directeur Innovation</p>
-                </div>
-            </div>
+            <p>OmniNova Solutions est une entreprise de conseil spécialisée dans la transformation numérique. Nous accompagnons les entreprises dans le développement web, le déploiement cloud, les solutions IoT, la gestion de projets et l’analyse de données. Nous offrons des conseils stratégiques pour optimiser les processus, améliorer l'efficacité opérationnelle, intégrer des technologies innovantes et garantir la scalabilité des solutions. Notre objectif est de fournir des solutions sur-mesure qui répondent aux besoins spécifiques de chaque client, tout en assurant une gestion agile et un déploiement réussi.</p>
+            
         </div>
     </section>
 
@@ -388,11 +382,11 @@
         <div class="footer-content">
             <div>
                 <h3>OmniNova Solutions</h3>
-                <p>123 Avenue de l'Innovation<br>75000 Paris, France</p>
+                <p>27 Avenue de Général Leclerc<br>25600 Sochaux, France</p>
             </div>
             <div>
                 <h3>Contact</h3>
-                <p>Email: contact@omninova.com<br>Tél: +33 1 23 45 67 89</p>
+                <p>Email: contact@omninova.com<br>Tél: +33 7 49 86 20 77</p>
             </div>
             <div>
                 <h3>Horaires</h3>
