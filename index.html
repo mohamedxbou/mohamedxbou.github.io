@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OmniNova Solutions - Connecting Ideas to Innovation</title>
+    <style>
+        :root {
+            --primary: #4A90E2;
+            --secondary: #F8F9FA;
+            --dark: #2C3E50;
+            --light: #FFFFFF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            line-height: 1.6;
+            color: var(--dark);
+        }
+
+        .header {
+            background: var(--light);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary);
+        }
+
+        .nav-toggle {
+            display: none;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-menu a {
+            color: var(--dark);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .nav-menu a:hover {
+            color: var(--primary);
+        }
+
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, #2C5282 100%);
+            color: var(--light);
+            padding: 8rem 1rem 4rem;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .section {
+            padding: 4rem 1rem;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .services {
+            background: var(--secondary);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .service-card {
+            background: var(--light);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--primary);
+            border-radius: 50%;
+            margin: 0 auto 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--light);
+            font-size: 1.5rem;
+        }
+
+        .service-card h3 {
+            margin: 1rem 0;
+            color: var(--primary);
+        }
+
+        .service-card ul {
+            list-style: none;
+            margin: 1rem 0;
+        }
+
+        .service-card li {
+            margin: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .service-card li::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+        }
+
+        .about {
+            background: var(--light);
+        }
+
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .team-member {
+            text-align: center;
+        }
+
+        .team-photo {
+            width: 150px;
+            height: 150px;
+            background: #DDD;
+            border-radius: 50%;
+            margin: 0 auto 1rem;
+        }
+
+        .contact {
+            background: var(--secondary);
+        }
+
+        .contact-container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-form {
+            background: var(--light);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #DDD;
+            border-radius: 5px;
+        }
+
+        .footer {
+            background: var(--dark);
+            color: var(--light);
+            padding: 3rem 1rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: var(--primary);
+            color: var(--light);
+            text-decoration: none;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            margin-top: 2rem;
+            transition: background 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background: #357ABD;
+        }
+
+        @media (max-width: 768px) {
+            .nav-toggle {
+                display: block;
+            }
+
+            .nav-menu {
+                display: none;
+                width: 100%;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                background: var(--light);
+                padding: 1rem;
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .nav-menu.active {
+                display: flex;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav-container">
+            <div class="logo">OmniNova</div>
+            <button class="nav-toggle">Menu</button>
+            <ul class="nav-menu">
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">À propos</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Connecting Ideas to Innovation</h1>
+        <p>Solutions technologiques sur mesure pour votre transformation digitale</p>
+        <a href="#contact" class="cta-button">Demandez une consultation gratuite</a>
+    </section>
+
+    <section class="section services" id="services">
+        <h2 class="section-title">Nos Services</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">🌐</div>
+                <h3>Développement Web</h3>
+                <p>Solutions web personnalisées et évolutives</p>
+                <ul>
+                    <li>Sites web responsive</li>
+                    <li>Applications web progressives</li>
+                    <li>E-commerce</li>
+                    <li>Maintenance et support</li>
+                </ul>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">☁️</div>
+                <h3>Cloud Computing</h3>
+                <p>Infrastructure cloud sécurisée et performante</p>
+                <ul>
+                    <li>Migration cloud</li>
+                    <li>Architecture cloud</li>
+                    <li>DevOps</li>
+                    <li>Sécurité cloud</li>
+                </ul>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">📱</div>
+                <h3>IoT Solutions</h3>
+                <p>Connectez vos équipements intelligemment</p>
+                <ul>
+                    <li>Capteurs intelligents</li>
+                    <li>Automatisation</li>
+                    <li>Monitoring en temps réel</li>
+                    <li>Solutions sur mesure</li>
+                </ul>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">📊</div>
+                <h3>Analyse de Données</h3>
+                <p>Insights stratégiques pour votre business</p>
+                <ul>
+                    <li>Big Data</li>
+                    <li>Business Intelligence</li>
+                    <li>Machine Learning</li>
+                    <li>Visualisation de données</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="section about" id="about">
+        <h2 class="section-title">À Propos de Nous</h2>
+        <div class="about-content">
+            <p>OmniNova Solutions est leader dans la transformation digitale des entreprises. Depuis notre création en 2020, nous accompagnons nos clients dans leur évolution technologique avec expertise et innovation.</p>
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="team-photo"></div>
+                    <h3>Jean Dupont</h3>
+                    <p>CEO & Fondateur</p>
+                </div>
+                <div class="team-member">
+                    <div class="team-photo"></div>
+                    <h3>Marie Martin</h3>
+                    <p>CTO</p>
+                </div>
+                <div class="team-member">
+                    <div class="team-photo"></div>
+                    <h3>Pierre Laurent</h3>
+                    <p>Directeur Innovation</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section contact" id="contact">
+        <h2 class="section-title">Contactez-nous</h2>
+        <div class="contact-container">
+            <form class="contact-form">
+                <div class="form-group">
+                    <label for="name">Nom</label>
+                    <input type="text" id="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="cta-button">Envoyer</button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div>
+                <h3>OmniNova Solutions</h3>
+                <p>123 Avenue de l'Innovation<br>75000 Paris, France</p>
+            </div>
+            <div>
+                <h3>Contact</h3>
+                <p>Email: contact@omninova.com<br>Tél: +33 1 23 45 67 89</p>
+            </div>
+            <div>
+                <h3>Horaires</h3>
+                <p>Lundi - Vendredi<br>9:00 - 18:00</p>
+            </div>
+        </div>
+        <p style="margin-top: 2rem;">&copy; 2024 OmniNova Solutions. Tous droits réservés.</p>
+    </footer>
+
+    <script>
+        document.querySelector('.nav-toggle').addEventListener('click', () => {
+            document.querySelector('.nav-menu').classList.toggle('active');
+        });
+
+        document.querySelector('.contact-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Message envoyé ! Nous vous recontacterons dans les plus brefs délais.');
+        });
+    </script>
+</body>
+</html>
