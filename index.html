@@ -402,6 +402,24 @@ body {
                 <p>Lundi - Vendredi<br>9:00 - 18:00</p>
             </div>
         </div>
+        <form action="https://formsubmit.co/VOTRE_EMAIL@EMAIL.COM" method="POST">
+    <div class="form-group">
+        <input type="text" name="name" placeholder="Votre nom" required>
+    </div>
+    <div class="form-group">
+        <input type="email" name="email" placeholder="Votre email" required>
+    </div>
+    <div class="form-group">
+        <textarea name="message" rows="4" placeholder="Votre message" required></textarea>
+    </div>
+    <!-- Champs de configuration FormSubmit -->
+    <input type="hidden" name="_subject" value="Nouveau message de OmniNova">
+    <input type="hidden" name="_template" value="table">
+    <input type="hidden" name="_next" value="https://votresite.com/merci">
+    <div class="form-group">
+        <button type="submit">Envoyer</button>
+    </div>
+</form>
         <p style="margin-top: 2rem;">&copy; 2024 OmniNova Solutions. Tous droits réservés.</p>
     </footer>
 
